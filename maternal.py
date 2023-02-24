@@ -49,15 +49,15 @@ dt_results.columns = ['Method', 'Training MSE', 'Training R2', 'Test MSE', 'Test
 df_models = pd.concat([lr_results, rf_results,dt_results], axis=0)
 df_models.reset_index(drop=True)
 #Getting the inputs
-input_data = (55,110,85,6.9,98,88)
+input_data = (20,120,75,7.01,100,70)
 input_data_as_numpy_array = np.asarray(input_data)
 input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
 prediction=dt.predict(input_data_reshaped)
-if (prediction[0] == 0):
+if (prediction== 0):
 
   print("The pregnant patient is at low risk")
 
-elif (prediction[1]==1):
+elif (prediction==1):
 
   print('The pregnant patient is at high risk')
 
